@@ -8,3 +8,11 @@ body {
   background-color: rgb(29, 29, 40);
   color: white;
 }
+main{
+  margin: 2re auto;
+  text-align: center;
+}
+:root{
+  --color-primary-400: rgba(255, 136, 0, 0.614);
+  --color-primary-800: rgb(255, 136, 0);
+}
