@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { getAllProducts } from '../redux/actions/productsActions'
 
 const PRODUCTS = [
   {
@@ -17,11 +19,17 @@ const PRODUCTS = [
 ]
 
 const ProductsPage = () => {
+  const dispatch = useDispatch();
+  const {loading, products, error} = useSelector((state) => state.products)
+  useEffect(() => {
+    dispatch(getAllProducts());
+  }, [])
   return (
     <div>
       <h1>Products Page</h1>
+      {loading && <p>Loading...</p>}
       <ul>
-        {PRODUCTS.map((product) => (
+        {products?.map((product) => (
           <li key={product.id}>
             <Link to={`${product.id}`} >{product.title}</Link>
           </li>
