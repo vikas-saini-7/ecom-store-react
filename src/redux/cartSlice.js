@@ -19,7 +19,15 @@ const cartSlice = createSlice({
                 state.items.push({...newItem, quantity: 1});
             }
         },
-        removeFromCart (state, action) {}
+        removeFromCart (state, action) {
+            const id = action.payload;
+            const existingItem = state.items.find(item => item.id === id);
+            if(existingItem.quantity > 1){
+                existingItem.quantity--;
+            } else {
+                state.items = state.items.filter(item => item.id !== id)
+            }
+        }
     },
     extraReducers: builder => {}
 })

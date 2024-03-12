@@ -15,6 +15,7 @@ const ProductsPage = () => {
       <h1>Products Page</h1>
       <ul>
         {loading && <p>Loading...</p>}
+        {error != null && <p>Error fetching products...</p>}
         <div className='products-container'>
           {!loading && products.map((product) => (
             <Card

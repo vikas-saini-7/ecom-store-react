@@ -95,3 +95,53 @@ li{
     background-color: black;
     color: white;
   }
+
+
+
+
+
+  /* signle product  */
+  /* ProductCard.css */
+.product-card {
+  margin-bottom: 20px;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+}
+
+.product-details {
+  padding: 20px;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-category {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.product-rating {
+  font-size: 1rem;
+}
+
+.rating {
+  color: orange;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
