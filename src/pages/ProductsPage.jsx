@@ -2,21 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { getAllProducts } from '../redux/actions/productsActions'
-
-const PRODUCTS = [
-  {
-    id: 'p1',
-    title: 'product 1'
-  },
-  {
-    id: 'p2',
-    title: 'product 2'
-  },
-  {
-    id: 'p3',
-    title: 'product 3'
-  },
-]
+import Card from '../components/Card'
 
 const ProductsPage = () => {
   const dispatch = useDispatch();
@@ -27,13 +13,16 @@ const ProductsPage = () => {
   return (
     <div>
       <h1>Products Page</h1>
-      {loading && <p>Loading...</p>}
       <ul>
-        {products?.map((product) => (
-          <li key={product.id}>
-            <Link to={`${product.id}`} >{product.title}</Link>
-          </li>
-        ))}
+        {loading && <p>Loading...</p>}
+        <div className='products-container'>
+          {!loading && products.map((product) => (
+            <Card
+            key={product.id}
+            product={product}
+            />
+          ))}
+        </div>
       </ul>
     </div>
   )

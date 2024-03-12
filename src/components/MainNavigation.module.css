@@ -1,9 +1,9 @@
 .header {
-    max-width: 60rem;
+    max-width: 90rem;
     margin: auto;
     padding: 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
   }
   
   .list {
@@ -22,4 +22,20 @@
   .list a.active {
     color: var(--color-primary-800);
     text-decoration: underline;
+  }
+
+
+  .cart{
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .cart:hover{
+    background-color: rgba(0, 0, 0, 0.096);
+    
+  }
+  .cartCounter{
+    background-color: var(--color-primary-400);
+    padding: 4px 8px;
+    color: black;
   }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import classes from './MainNavigation.module.css'
 
 const MainNavigation = () => {
@@ -26,6 +26,15 @@ const MainNavigation = () => {
                 </li>
             </ul>
         </nav>
+        <Link to='/cart'>
+            <div className={classes.cart}>
+                <span>
+                    <i style={{fontSize:'1rem', color: 'black'}} class="fa-solid fa-cart-shopping"></i>
+                </span>
+                &nbsp;
+                <span className={classes.cartCounter}>1</span>
+            </div>
+        </Link>
     </header>
   )
 }

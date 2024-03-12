@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import RootLayout from './pages/Root';
 import ErrorPage from './pages/Error';
 import ProductDetailsPage from './pages/ProductDetailsPage';
+import CartPage from './pages/CartPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage/>
+      },
+      {
+        path: 'cart',
+        element: <CartPage/>
       },
       {
         path: 'products',

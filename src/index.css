@@ -1,3 +1,8 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,12 +10,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(29, 29, 40);
-  color: white;
+  background-color: rgb(240, 240, 255);
 }
 main{
   margin: 2re auto;
-  text-align: center;
 }
 :root{
   --color-primary-400: rgba(255, 136, 0, 0.614);
