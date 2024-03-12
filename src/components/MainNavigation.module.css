@@ -1,14 +1,14 @@
 .header {
-    max-width: 90rem;
+    /* max-width: 90rem;
     margin: auto;
     padding: 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; */
   }
   
   .list {
     display: flex;
-    gap: 1rem;
+    gap: calc(1rem + 5%);
     list-style-type: none;
   }
   
@@ -16,6 +16,8 @@
     text-decoration: none;
 
     color: var(--color-primary-400);
+    font-size: 1.25rem;
+    font-weight: bold;
   }
   
   .list a:hover,

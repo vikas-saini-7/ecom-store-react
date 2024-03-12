@@ -23,19 +23,23 @@ const Card = ({ product }) => {
   }
   return (
     <div className="card">
-      <img src={image} alt={title} className="card-img" />
-      <div className="card-body">
+      <img src={image} alt={title} className="card-img p-2" />
+      <div className="flex flex-1 flex-col justify-between p-6">
+        <div className='flex items-center justify-between mb-4'>
+          <p className="text-green-600">${price}</p>
+          <p className="bg-yellow-400 border-gray-400 rounded border bg-opacity-30 text-sm px-2">{category}</p>
+        </div>
         <div>
-          <Link to={`${id}`}><h2 className="card-title">{title}</h2></Link>
-          <p className="card-price">${price}</p>
-          <p className="card-description">{truncateDescription(description, 50)}</p>
-          <p className="card-category">{category}</p>
-          <div className="card-rating">
+          <Link to={`${id}`}><h2 className="font-bold text-lg">{title}</h2></Link>
+          
+          <p className="text-gray-500">{truncateDescription(description, 50)}</p>
+          
+          <div className="">
             Rating: {rating.rate} ({rating.count} reviews)
           </div>
         </div>
         <div>
-          <button className='btn' onClick={handleAddToCart}>Add to Cart</button>
+          <button className="border w-full border-gray-400 py-2 mt-4 hover:bg-yellow-400 hover:border-black rounded" onClick={handleAddToCart}>Add to Cart</button>
         </div>
       </div>
     </div>

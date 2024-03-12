@@ -24,7 +24,7 @@ const productsSlice = createSlice({
         })
         builder.addCase(getAllProducts.rejected, (state, action) => {
             state.loading = false;
-            state.error = "error fetching products";
+            state.error = action.payload;
         })
         // single product
         builder.addCase(getSingleProduct.pending, (state) => {

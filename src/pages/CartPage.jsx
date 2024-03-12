@@ -1,31 +1,73 @@
 import React, { useState } from 'react';
-import './CartPage.css';
 import {useSelector} from 'react-redux'
 import CartItem from '../components/CartItem';
+import EmptyCart from '../components/EmptyCart';
 
 const CartPage = () => {
   const {items} = useSelector((state) => state.cart);
 
-  function totalPrice() {
+  const deliveryCharges =40;
+
+  function totalItemsPrice() {
     let price = 0;
     items.forEach(element => {
       price = (element.price * element.quantity) + price
     });
     return price;
   }
-  return (
-    <div className="cart-page">
-      <div className="products-list">
-      <h2>Cart</h2>
-        {items.map(product => (
-          <CartItem key={product.id} product={product}/>
-        ))}
 
-      <div className="total-price">
-        <p>Total: {totalPrice()}</p>
+  function totalGST() {
+    return totalItemsPrice() * 0.18;
+  }
+
+  function totalPrice() {
+    return totalItemsPrice() + deliveryCharges + totalGST();
+  }
+  return (
+    <div className='custom-container'>
+      {items.length !== 0 ?
+      <>
+      <h2 className='heading'>Cart</h2>
+      <div className="cart-page">
+        <div className='left'>
+          <div className="products-list">
+            {items.map(product => (
+              <CartItem key={product.id} product={product}/>
+            ))}
+          <div className="total-price">
+            <p>Total: {totalItemsPrice().toFixed(2)}</p>
+          </div>
+          {/* <button className="checkout-button">Checkout</button> */}
+          </div>
+        </div>
+        <div className='right'>
+          <h2 style={{marginBottom: '32px'}}>Checkout to proceed to payments</h2>
+          <div className='item'>
+            <p>Goods Amount:</p>
+            <span>{totalItemsPrice().toFixed(2)}</span>
+          </div>
+          <div className='item'>
+            <p>Delivery Charges:</p>
+            <span>{deliveryCharges}</span>
+          </div>
+          <div className='item'>
+            <p>GST (18%):</p>
+            <span>{totalGST().toFixed(2)}</span>
+          </div>
+          <div className='total-amount'>
+            <p>Total Amount:</p>
+            <h2>{totalPrice().toFixed(2)}</h2>
+          </div>
+          <button className='btn'>Checkout</button>
+        </div>
       </div>
-      <button className="checkout-button">Checkout</button>
-      </div>
+      </>
+      :
+      <>
+      <EmptyCart/>
+      </>
+      }
+      
     </div>
   );
 };

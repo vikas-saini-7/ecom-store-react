@@ -1,3 +1,8 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 *{
   padding: 0;
   margin: 0;
@@ -11,12 +16,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(240, 240, 255);
+  font-family: "Karla", sans-serif;
 }
 main{
-  margin: 2rem auto;
-  max-width: 1400px;
+  /* max-width: 1400px; */
 }
 :root{
-  --color-primary-400: rgba(255, 136, 0, 0.614);
-  --color-primary-800: rgb(255, 136, 0);
+  --color-primary-400: #1d1c299d;
+  --color-primary-800: #000000;
+}
+
+.custom-container{
+  /* max-width: 1500px;
+  margin: 0 auto; */
+  padding: 0 10%;
+}
+.heading{
+  margin-bottom: 32px;
 }
