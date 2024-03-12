@@ -32,7 +32,6 @@
   }
   .cart:hover{
     background-color: rgba(0, 0, 0, 0.096);
-    
   }
   .cartCounter{
     background-color: var(--color-primary-400);

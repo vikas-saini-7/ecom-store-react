@@ -13,7 +13,8 @@ body {
   background-color: rgb(240, 240, 255);
 }
 main{
-  margin: 2re auto;
+  margin: 2rem auto;
+  max-width: 1400px;
 }
 :root{
   --color-primary-400: rgba(255, 136, 0, 0.614);

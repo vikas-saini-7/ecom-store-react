@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import classes from './MainNavigation.module.css'
+import { useSelector } from 'react-redux'
 
 const MainNavigation = () => {
+    const {items} = useSelector((state) => state.cart);
   return (
     <header className={classes.header}>
         <nav>
@@ -32,7 +34,7 @@ const MainNavigation = () => {
                     <i style={{fontSize:'1rem', color: 'black'}} class="fa-solid fa-cart-shopping"></i>
                 </span>
                 &nbsp;
-                <span className={classes.cartCounter}>1</span>
+                <span className={classes.cartCounter}>{items.length}</span>
             </div>
         </Link>
     </header>
