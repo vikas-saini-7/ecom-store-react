@@ -4,9 +4,8 @@ import CartItem from '../components/CartItem';
 import EmptyCart from '../components/EmptyCart';
 
 const CartPage = () => {
+  const [deliveryCharges, setDeliveryCharges] = useState(40);
   const {items} = useSelector((state) => state.cart);
-
-  const deliveryCharges =40;
 
   function totalItemsPrice() {
     let price = 0;
