@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToCart, removeFromCart } from '../redux/cartSlice'
+import { addToFavorites, removeFromFavorites } from '../redux/FavoriteSlice';
 
 // Function to truncate the description to two lines with ellipsis
 const truncateDescription = (text, maxChars) => {
@@ -20,6 +21,10 @@ const Card = ({ product }) => {
 
   const handleAddToCart = () => {
     dispatch(addToCart(product))
+  }
+
+  const handleLike = () => {
+    dispatch(addToFavorites(product))
   }
   return (
     <div className="card">
@@ -41,6 +46,7 @@ const Card = ({ product }) => {
         <div>
           <button className="border w-full border-gray-400 py-2 mt-4 hover:bg-yellow-400 hover:border-black rounded" onClick={handleAddToCart}>Add to Cart</button>
         </div>
+        <button onClick={handleLike}>Like</button>
       </div>
     </div>
   );
