@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    items: [],
-
+    favItems: [],
 }
 
 const favoriteSlice = createSlice({
@@ -11,14 +10,17 @@ const favoriteSlice = createSlice({
     reducers:{
         addToFavorites(state, action){
             const id = action.payload.id;
-            const existingItem = state.items.find((item) => item.id === id);
+            const existingItem = state.favItems.find((item) => item.id === id);
             if(existingItem){
                 alert('already liked');
                 return
             }
-            state.items.push(action.payload);
+            state.favItems.push(action.payload);
         },
-        removeFromFavorites(state, action){}
+        removeFromFavorites(state, action){
+            const id = action.payload.id;
+            state.favItems = state.favItems.filter((item) => item.id !== id);
+        }
     }
 })
 

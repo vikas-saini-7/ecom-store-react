@@ -40,7 +40,7 @@ const MySwiper = () => {
             pagination={{ clickable: true }}
             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}>
                 {SwiperImages.map((item) => (
-                    <SwiperSlide>
+                    <SwiperSlide key={item.id}>
                         <img className='w-full h-[360px] md:h-[450px] lg:h-[550px] xl:h-[650px] object-cover' src="https://cdn.dribbble.com/users/428659/screenshots/5805667/dribbblebnr.jpg?compress=1&resize=400x300&vertical=top" alt="" />
                     </SwiperSlide>
                 ))}

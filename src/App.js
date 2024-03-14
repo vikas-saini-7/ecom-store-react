@@ -6,6 +6,7 @@ import RootLayout from './pages/Root';
 import ErrorPage from './pages/Error';
 import ProductDetailsPage from './pages/ProductDetailsPage';
 import CartPage from './pages/CartPage.jsx';
+import FavoritesPage from './pages/FavoritesPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
         element: <CartPage/>
       },
       {
+        path: 'favorites',
+        element: <FavoritesPage/>
+      },
+      {
         path: 'products',
         element: <ProductsPage/>
       },
@@ -31,7 +36,6 @@ const router = createBrowserRouter([
       },
     ]
   },
-  
 ])
 
 function App() {
