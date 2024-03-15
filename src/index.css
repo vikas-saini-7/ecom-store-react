@@ -31,6 +31,12 @@ main{
   margin: 0 auto; */
   padding: 0 10%;
 }
+@media (max-width: 450px){
+
+.custom-container{
+  padding: 0 16px;
+}
+}
 .heading{
   margin-bottom: 32px;
 }

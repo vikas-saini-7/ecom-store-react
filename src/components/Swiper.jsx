@@ -13,15 +13,15 @@ import 'swiper/css';
 const SwiperImages = [
     {
         id: 1,
-        image: './images/swiper1.png'
+        image: './images/hero.png'
     },
     {
-        id: 1,
-        image: './images/swiper1.png'
+        id: 2,
+        image: './images/hero-1.png'
     },
     {
-        id: 1,
-        image: './images/swiper1.png'
+        id: 3,
+        image: './images/hero-2.png'
     },
 ]
 
@@ -41,7 +41,7 @@ const MySwiper = () => {
             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}>
                 {SwiperImages.map((item) => (
                     <SwiperSlide key={item.id}>
-                        <img className='w-full h-[360px] md:h-[450px] lg:h-[550px] xl:h-[650px] object-cover' src="https://cdn.dribbble.com/users/428659/screenshots/5805667/dribbblebnr.jpg?compress=1&resize=400x300&vertical=top" alt="" />
+                        <img className='w-full h-[200px] sm:h-[280px] md:h-[320px] lg:h-[400px] xl:h-[600px] object-cover' src={item.image} alt="" />
                     </SwiperSlide>
                 ))}
         </Swiper>

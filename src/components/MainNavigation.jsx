@@ -10,14 +10,14 @@ const MainNavigation = () => {
     <>
     <header className="custom-container bg-white flex items-center justify-between h-[72px]">
         <nav>
-            <ul className={classes.list}>
+            <ul className={`${classes.list} flex items-center gap-2 md:gap-8`}>
                 <li>
                     <NavLink
                         to='/'
                         className={({isActive}) => isActive ? classes.active : undefined}
                         end 
                     >
-                        Home
+                        <img src="/images/logo.png" className='md:h-14 h-10  object-contain' alt="" />
                     </NavLink>
                 </li>
                 <li>
