@@ -39,7 +39,7 @@ const MainNavigation = () => {
                     <span className="absolute px-2 flex items-center justify-center bg-red-500 text-white border rounded-md border-black -top-2 -right-4 text-sm font-bold">{favItems.length}</span>
                 </div>
             </Link>
-            <img className='w-7' src="/images/user.png" alt="" />
+            <img className='w-7 hidden md:block' src="/images/user.png" alt="" />
             <Link to='/cart'>
                 <div className="flex relative">
                     <img className='w-8' src="/images/cart.png" alt="" />
