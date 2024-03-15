@@ -57,7 +57,7 @@ const CartPage = () => {
             <p>Total Amount:</p>
             <h2>${totalPrice().toFixed(2)}</h2>
           </div>
-          <button className='btn'>Checkout</button>
+          <button className='btn' onClick={() => {alert("Contact Vikas Saini to add this feature!")}}>Checkout</button>
         </div>
       </div>
       </>
